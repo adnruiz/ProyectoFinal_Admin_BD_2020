@@ -1,0 +1,205 @@
+package vista;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.awt.Font;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.border.EmptyBorder;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+
+import controlador.PersonalDAO;
+import modelo.Personal;
+
+import java.awt.SystemColor;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
+import javax.swing.JComboBox;
+import javax.swing.JButton;
+import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class modificarPersonal extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtNombre;
+	private JTextField txtApellidoPaterno;
+	private JTextField txtMaterno;
+	Font f = new Font("Tahoma", Font.BOLD, 12);
+	JComboBox <String>cboPuesto, cboEntrada, cboSalida, cboSueldo, cboDiasTrabajados;
+	MetodosMagicosP magic = new MetodosMagicosP();
+	//static agregarPersonal frame = new agregarPersonal();
+	PersonalDAO personalDAO = new PersonalDAO();
+	JTable tablaModificaciones;
+	int selectedRow,selectedColumn;
+	/**
+	 * Create the frame.
+	 */
+	public modificarPersonal() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 797, 399);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		setVisible(true);
+		
+		JPanel panelCom = new JPanel();
+		panelCom.setBackground(SystemColor.activeCaption);
+		panelCom.setBounds(0, 0, 234, 364);
+		contentPane.add(panelCom);
+		panelCom.setLayout(null);
+		
+		JLabel lblNombre = new JLabel();
+		lblNombre = magic.configuracionEtiqueta(lblNombre, "Nombre",f, 10, 11, 63, 21);
+		lblNombre.setBounds(10, 11, 63, 21);
+		panelCom.add(lblNombre);
+		
+		txtNombre = new JTextField();
+		txtNombre.setText("");
+		txtNombre = magic.configuracionCajasTexto(txtNombre, f, 107, 11, 106, 21);
+		panelCom.add(txtNombre);
+		txtNombre.setColumns(10);
+		
+		JLabel lblApPaterno = new JLabel();
+		lblApPaterno = magic.configuracionEtiqueta(lblApPaterno, "Ap. Paterno", f, 10, 43, 83, 14);
+		panelCom.add(lblApPaterno);
+		
+		txtApellidoPaterno = new JTextField();
+		txtApellidoPaterno.setText("");
+		txtApellidoPaterno.setColumns(10);
+		txtApellidoPaterno = magic.configuracionCajasTexto(txtApellidoPaterno, f, 107, 38, 106, 21);
+		panelCom.add(txtApellidoPaterno);
+		
+		JLabel lblApMaterno = new JLabel();
+		lblApMaterno = magic.configuracionEtiqueta(lblApMaterno, "Ap. Materno", f, 10, 68, 83, 14);
+		panelCom.add(lblApMaterno);
+		
+		txtMaterno = new JTextField();
+		txtMaterno.setText("");
+		txtMaterno.setColumns(10);
+		txtMaterno = magic.configuracionCajasTexto(txtMaterno, f, 107, 65, 106, 21);
+		panelCom.add(txtMaterno);
+		
+		JLabel lblPuesto = new JLabel();
+		lblPuesto = magic.configuracionEtiqueta(lblPuesto, "Puesto", f, 10, 102, 83, 14);
+		panelCom.add(lblPuesto);
+		
+		
+		cboPuesto = magic.configuracionCombo(cboPuesto, magic.puestos(), f, 107, 97, 106, 20);
+		panelCom.add(cboPuesto);
+		
+		JLabel lblHEntrada = new JLabel();
+		lblHEntrada = magic.configuracionEtiqueta(lblHEntrada, "H. Entrada", f, 10, 138, 83, 14);
+		panelCom.add(lblHEntrada);
+		
+		cboEntrada = magic.configuracionCombo(cboEntrada, magic.entrada(), f, 107, 135, 106, 20);
+		panelCom.add(cboEntrada);
+		
+		JLabel lblHSalida = new JLabel();
+		lblHSalida = magic.configuracionEtiqueta(lblHSalida, "H. Salida", f, 10, 174, 83, 14);
+		panelCom.add(lblHSalida);
+		
+		JLabel lblSueldo = new JLabel();
+		lblSueldo = magic.configuracionEtiqueta(lblSueldo, "Sueldo", f, 10, 209, 83, 14);
+		panelCom.add(lblSueldo);
+		
+		JLabel lblDias = new JLabel();
+		lblDias = magic.configuracionEtiqueta(lblDias, "Dias Trab.", f, 10, 241, 83, 14);
+		panelCom.add(lblDias);
+		
+		
+		cboSalida = magic.configuracionCombo(cboSalida, magic.salida(), f, 107, 171, 106, 20);
+		panelCom.add(cboSalida);
+		
+		
+		cboSueldo = magic.configuracionCombo(cboSueldo, magic.sueldo(), f, 107, 206, 106, 20);
+		panelCom.add(cboSueldo);
+		
+		
+		cboDiasTrabajados = magic.configuracionCombo(cboDiasTrabajados, magic.dias(), f, 107, 238, 106, 20);
+		panelCom.add(cboDiasTrabajados);
+		
+		
+		
+		JButton btnGuardar = new JButton("GUARDAR");
+		btnGuardar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				/*
+				 * personalDAO.eliminarRegistro(Integer.parseInt(tableAltas.getValueAt(selectedRow, 0).toString()));
+				personalDAO.actualizarTabla(tableAltas);	
+				 * */
+				Personal personal = new Personal(tablaModificaciones.getValueAt(selectedRow, 0).toString(),txtNombre.getText(), txtApellidoPaterno.getText(), txtMaterno.getText(),
+						cboPuesto.getSelectedItem().toString(), cboSalida.getSelectedItem().toString(), cboEntrada.getSelectedItem().toString(),
+						Integer.parseInt(cboSueldo.getSelectedItem().toString()), Integer.parseInt(cboDiasTrabajados.getSelectedItem().toString()));
+				boolean validacion1 = magic.validarComponentes(personal);
+				boolean validacion2 = magic.validarEspacios(personal);
+				if(validacion1 || validacion2) {
+					 JOptionPane.showMessageDialog(getParent(), "No se pudo agregar, datos insuficientes");
+				}else {
+					JOptionPane.showMessageDialog(getParent(), "REGISTRO AGREGADO CORRECTAMENTE");
+					 personalDAO.actualizarRegistros(personal);
+					 personalDAO.actualizarTabla(tablaModificaciones);				
+				}//else 
+				
+			}
+		});
+		btnGuardar.setIcon(new ImageIcon("iconos\\salvar.png"));
+		btnGuardar.setBounds(43, 266, 132, 36);
+		panelCom.add(btnGuardar);
+		
+		JButton btnCancelar = new JButton("CANCELAR");
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+			}
+		});
+		btnCancelar.setIcon(new ImageIcon("iconos\\cruz-entrecruzada.png"));
+		btnCancelar.setBounds(43, 313, 132, 40);
+		panelCom.add(btnCancelar);
+		
+		JPanel panelTabla = new JPanel();
+		panelTabla.setBounds(233, 53, 538, 233);
+		contentPane.add(panelTabla);
+		panelTabla.setLayout(null);
+		
+		String columnas[] = { "ID Usuario", "Nombre", "Primer Ap", "Segundo Ap", "Puesto", "Entrada", "Salida", "Sueldo", "Dias Trabj." };
+		String datos[][] = { };
+
+		tablaModificaciones = new JTable(datos, columnas);
+		JScrollPane scroll = new JScrollPane(tablaModificaciones);
+		scroll.setBounds(5, 9, 523, 213);
+		panelTabla.add(scroll);
+		personalDAO.actualizarTabla(tablaModificaciones);
+		
+		ListSelectionModel model = tablaModificaciones.getSelectionModel();
+		model.addListSelectionListener(new ListSelectionListener() {
+			@Override
+			public void valueChanged(ListSelectionEvent e) {
+				// TODO Auto-generated method stub
+				if(! model.isSelectionEmpty()) {
+					//GET SELECTED ROW
+					selectedRow=model.getMinSelectionIndex();
+					selectedColumn = tablaModificaciones.getSelectedColumn();
+					
+					txtNombre.setText(tablaModificaciones.getValueAt(selectedRow, 1).toString());
+					txtApellidoPaterno.setText(tablaModificaciones.getValueAt(selectedRow, 2).toString());
+					txtMaterno.setText(tablaModificaciones.getValueAt(selectedRow, 3).toString());
+					cboPuesto.setSelectedItem(tablaModificaciones.getValueAt(selectedRow, 4));
+					cboEntrada.setSelectedItem(tablaModificaciones.getValueAt(selectedRow, 5));
+					cboSalida.setSelectedItem(tablaModificaciones.getValueAt(selectedRow, 6));
+					cboSueldo.setSelectedItem(tablaModificaciones.getValueAt(selectedRow, 7));
+					cboDiasTrabajados.setSelectedItem(tablaModificaciones.getValueAt(selectedRow, 8));
+					
+				}
+			}
+		});
+	}
+}

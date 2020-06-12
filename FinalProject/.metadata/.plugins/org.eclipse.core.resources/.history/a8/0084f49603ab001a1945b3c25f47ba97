@@ -1,0 +1,117 @@
+package vista;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.border.EmptyBorder;
+
+import controlador.BotellasDAO;
+import controlador.PersonalDAO;
+
+import java.awt.SystemColor;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class botellasABCC extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtConsulta;
+	JTable tablaAgregar;
+	BotellasDAO botellasDAO = new BotellasDAO();
+	JPanel panelTabla = new JPanel();
+	principal p = new principal();
+	int selectedRow,selectedColumn;
+	String aux = "";
+	/**
+	 * Create the frame.
+	 */
+	public botellasABCC() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 693, 403);
+		contentPane = new JPanel();
+		contentPane.setBackground(SystemColor.textHighlight);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		setVisible(true);
+		
+		txtConsulta = new JTextField();
+		txtConsulta.setBounds(86, 29, 201, 27);
+		contentPane.add(txtConsulta);
+		txtConsulta.setColumns(10);
+		
+		JButton btnConsulta = new JButton("");
+		btnConsulta.setIcon(new ImageIcon("C:\\Users\\adnru\\OneDrive\\Escritorio\\8\u00B0\\FinalProject\\AdmnBD_ProyectoFinal_RuizVillaobosAdan\\iconos\\lupa.png"));
+		btnConsulta.setBounds(285, 29, 34, 27);
+		contentPane.add(btnConsulta);
+		
+		
+		String columnasBot[] = { "ID Botella", "Nombre Bot.", "Precio Bot", "Niv. Alcohol", "Destilado", "Cantidad Botellas"};
+		String datosBot[][] = {};
+
+		tablaAgregar = new JTable(datosBot, columnasBot);
+		JScrollPane scrollBot = new JScrollPane(tablaAgregar);
+		scrollBot.setBounds(5, 9, 670, 160);
+		
+		panelTabla.setBackground(SystemColor.activeCaption);
+		panelTabla.setBounds(0, 82, 677, 200);
+		panelTabla.add(scrollBot);
+		contentPane.add(panelTabla);
+		botellasDAO.actualizarTabla(tablaAgregar);
+		
+		JButton btnAgregar = new JButton("AGREGAR");
+		btnAgregar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				agregarBot agregarBotella = new agregarBot();
+				agregarBotella.setVisible(true);
+			}
+		});
+		btnAgregar.setIcon(new ImageIcon("C:\\Users\\adnru\\OneDrive\\Escritorio\\8\u00B0\\FinalProject\\AdmnBD_ProyectoFinal_RuizVillaobosAdan\\iconos\\vino.png"));
+		btnAgregar.setBounds(441, 29, 121, 33);
+		contentPane.add(btnAgregar);
+		
+		JButton btnEliminar = new JButton("ELIMINAR");
+		btnEliminar.setIcon(new ImageIcon("C:\\Users\\adnru\\OneDrive\\Escritorio\\8\u00B0\\FinalProject\\AdmnBD_ProyectoFinal_RuizVillaobosAdan\\iconos\\basura.png"));
+		btnEliminar.setBounds(41, 293, 121, 39);
+		contentPane.add(btnEliminar);
+		
+		JButton btnModificar = new JButton("MODIFICAR");
+		btnModificar.setIcon(new ImageIcon("C:\\Users\\adnru\\OneDrive\\Escritorio\\8\u00B0\\FinalProject\\AdmnBD_ProyectoFinal_RuizVillaobosAdan\\iconos\\lapiz.png"));
+		btnModificar.setBounds(201, 293, 121, 39);
+		contentPane.add(btnModificar);
+		
+		JButton btnInventario = new JButton("Inventario");
+		btnInventario.setIcon(new ImageIcon("C:\\Users\\adnru\\OneDrive\\Escritorio\\8\u00B0\\FinalProject\\AdmnBD_ProyectoFinal_RuizVillaobosAdan\\iconos\\inventario2.png"));
+		btnInventario.setBounds(369, 293, 121, 39);
+		contentPane.add(btnInventario);
+		
+		JButton btnCerrar = new JButton("CERRAR");
+		btnCerrar.setIcon(new ImageIcon("C:\\Users\\adnru\\OneDrive\\Escritorio\\8\u00B0\\FinalProject\\AdmnBD_ProyectoFinal_RuizVillaobosAdan\\iconos\\cruz-entrecruzada.png"));
+		btnCerrar.setBounds(533, 293, 121, 39);
+		contentPane.add(btnCerrar);
+		setVisible(true);
+	}
+
+	/*
+	 * Launch the application.
+	 
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					botellasABCC frame = new botellasABCC();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}*/
+}

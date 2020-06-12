@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;vista.MetodosMagicos&apos; to &apos;MetodosMagicosP&apos;&#x0D;&#x0A;- Original project: &apos;AdmnBD_ProyectoFinal_RuizVillaobosAdan&apos;&#x0D;&#x0A;- Original element: &apos;vista.MetodosMagicos&apos;&#x0D;&#x0A;- Renamed element: &apos;vista.MetodosMagicosP&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;MetodosMagicos&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;vista{MetodosMagicos.java[MetodosMagicos" matchStrategy="1" name="MetodosMagicosP" qualified="false" references="true" similarDeclarations="false" stamp="1591255851254" textual="false" version="1.0"/>
+</session>

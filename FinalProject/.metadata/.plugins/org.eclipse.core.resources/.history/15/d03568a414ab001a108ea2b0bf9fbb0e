@@ -1,0 +1,133 @@
+package vista;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.awt.Font;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.border.EmptyBorder;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+
+import controlador.BotellasDAO;
+import modelo.Botellas;
+
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
+import javax.swing.JButton;
+import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class inventarioBot extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtActual;
+	private JTextField txtAgregar;
+	MetodosMagicoBotellas magic = new MetodosMagicoBotellas();
+	BotellasDAO botellasDAO = new BotellasDAO();
+	JTable tablaModBot;
+	int selectedRow,selectedColumn;
+	Font f = new Font("Tahoma", Font.BOLD, 12);
+	/**
+	 * Create the frame.
+	 */
+	public inventarioBot() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 577, 338);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(0, 0, 139, 299);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblActual = new JLabel();
+		lblActual = magic.configuracionEtiqueta(lblActual, "Cant. Actual", f, 10, 51, 101, 14);
+		panel.add(lblActual);
+		
+		txtActual = new JTextField();
+		txtActual.setEditable(false);
+		txtActual = magic.configuracionCajasTexto(txtActual, f, 10, 76, 101, 20);
+		panel.add(txtActual);
+		txtActual.setColumns(10);
+		
+		JLabel lblAgregar = new JLabel("Cant. Agregar");
+		lblAgregar = magic.configuracionEtiqueta(lblAgregar, "Cant. Agregar", f, 10, 139, 101, 14);
+		panel.add(lblAgregar);
+		
+		txtAgregar = new JTextField();
+		txtAgregar.setColumns(10);
+		txtAgregar = magic.configuracionCajasTexto(txtAgregar, f, 10, 170, 101, 20);
+		panel.add(txtAgregar);
+		
+		JButton btnGuardar = new JButton("GUARDAR");
+		btnGuardar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Botellas bot = new Botellas(Integer.parseInt(tablaModBot.getValueAt(selectedRow, 0).toString()), Integer.parseInt(txtAgregar.getText()));
+				boolean validacion1 = magic.validarComponentes(bot);
+				boolean validacion2 = magic.validarEspacios(bot);
+				if(validacion1 || validacion2) {
+					 JOptionPane.showMessageDialog(getParent(), "No se pudo agregar, datos insuficientes");
+				}else {
+					JOptionPane.showMessageDialog(getParent(), "REGISTRO AGREGADO CORRECTAMENTE");
+					botellasDAO.actualizarRegistros(bot);
+					botellasDAO.actualizarTablaB(tablaModBot);
+					botellasABCC b = new botellasABCC();
+					botellasDAO.actualizarTablaB(b.tablaBot);
+				} 
+			}
+		});
+		btnGuardar.setIcon(new ImageIcon("iconos\\salvar.png"));
+		btnGuardar.setBounds(10, 206, 119, 39);
+		panel.add(btnGuardar);
+		
+		JButton btnCancelar = new JButton("CANCELAR");
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+			}
+		});
+		btnCancelar.setIcon(new ImageIcon("iconos\\cruz-entrecruzada.png"));
+		btnCancelar.setBounds(10, 249, 119, 39);
+		panel.add(btnCancelar);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(141, 68, 420, 154);
+		contentPane.add(panel_1);
+		setVisible(true);
+		
+		String columnasBot[] = {"ID Botella", "Nombre Bot.", "Precio Bot", "Niv. Alcohol", "Destilado", "Cantidad Botellas"};
+		String datosBot[][] = {};
+		
+		tablaModBot = new JTable(datosBot, columnasBot);
+		JScrollPane scrollB = new JScrollPane(tablaModBot);
+		scrollB.setBounds(10, 9, 657, 180);
+		panel_1.add(scrollB);
+		botellasDAO.actualizarTablaB(tablaModBot);
+		
+		ListSelectionModel model = tablaModBot.getSelectionModel();
+		model.addListSelectionListener(new ListSelectionListener() {
+			@Override
+			public void valueChanged(ListSelectionEvent e) {
+				// TODO Auto-generated method stub
+				if(! model.isSelectionEmpty()) {
+					//GET SELECTED ROW
+					selectedRow=model.getMinSelectionIndex();
+					selectedColumn = tablaModBot.getSelectedColumn();
+					
+					txtActual.setText(tablaModBot.getValueAt(selectedRow, 5).toString());
+				}
+			}
+		});
+	}
+
+}

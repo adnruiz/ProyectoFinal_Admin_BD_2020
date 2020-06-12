@@ -1,0 +1,128 @@
+package vista;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.SystemColor;
+import javax.swing.ImageIcon;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import javax.swing.JButton;
+
+public class agregarBot extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtID;
+	private JTextField txtNombre;
+	private JTextField txtCantidad;
+	JComboBox <String> cboPrecio, cboNivel;
+
+	/**
+	 * Create the frame.
+	 */
+	public agregarBot() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 364, 414);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lb_IDBot = new JLabel("ID ");
+		lb_IDBot.setBounds(10, 58, 46, 14);
+		contentPane.add(lb_IDBot);
+		
+		JLabel lblTitulo = new JLabel("AGREGAR BOTELLA");
+		lblTitulo.setIcon(new ImageIcon("C:\\Users\\adnru\\OneDrive\\Escritorio\\8\u00B0\\FinalProject\\AdmnBD_ProyectoFinal_RuizVillaobosAdan\\iconos\\vino.png"));
+		lblTitulo.setForeground(SystemColor.textHighlight);
+		lblTitulo.setFont(new Font("Lucida Console", Font.BOLD, 18));
+		lblTitulo.setBounds(55, 11, 222, 36);
+		contentPane.add(lblTitulo);
+		
+		JLabel lblNombre = new JLabel("Nom. Botella");
+		lblNombre.setBounds(10, 93, 107, 14);
+		contentPane.add(lblNombre);
+		
+		JLabel lblPrecio = new JLabel("Precio");
+		lblPrecio.setBounds(10, 131, 107, 14);
+		contentPane.add(lblPrecio);
+		
+		JLabel lblNivel = new JLabel("Niv. Alcohol");
+		lblNivel.setBounds(10, 167, 107, 14);
+		contentPane.add(lblNivel);
+		
+		JLabel lblDestilado = new JLabel("Destilado");
+		lblDestilado.setBounds(10, 205, 107, 14);
+		contentPane.add(lblDestilado);
+		
+		JLabel lblCantidad = new JLabel("Cantidad");
+		lblCantidad.setBounds(10, 236, 107, 14);
+		contentPane.add(lblCantidad);
+		
+		txtID = new JTextField();
+		txtID.setBounds(193, 58, 143, 20);
+		contentPane.add(txtID);
+		txtID.setColumns(10);
+		
+		txtNombre = new JTextField();
+		txtNombre.setColumns(10);
+		txtNombre.setBounds(193, 87, 143, 20);
+		contentPane.add(txtNombre);
+		
+		txtCantidad = new JTextField();
+		txtCantidad.setColumns(10);
+		txtCantidad.setBounds(193, 236, 143, 20);
+		contentPane.add(txtCantidad);
+		
+		
+		cboPrecio.setBounds(193, 128, 143, 20);
+		contentPane.add(cboPrecio);
+		
+		
+		cboNivel.setBounds(193, 167, 143, 20);
+		contentPane.add(cboNivel);
+		
+		JComboBox cboPrecio_1 = new JComboBox();
+		cboPrecio_1.setBounds(193, 202, 143, 20);
+		contentPane.add(cboPrecio_1);
+		
+		JButton btnAgregar = new JButton("AGREGAR");
+		btnAgregar.setIcon(new ImageIcon("C:\\Users\\adnru\\OneDrive\\Escritorio\\8\u00B0\\FinalProject\\AdmnBD_ProyectoFinal_RuizVillaobosAdan\\iconos\\vino.png"));
+		btnAgregar.setBounds(10, 277, 130, 36);
+		contentPane.add(btnAgregar);
+		
+		JButton btnCerrar = new JButton("CERRAR");
+		btnCerrar.setIcon(new ImageIcon("C:\\Users\\adnru\\OneDrive\\Escritorio\\8\u00B0\\FinalProject\\AdmnBD_ProyectoFinal_RuizVillaobosAdan\\iconos\\cruz-entrecruzada.png"));
+		btnCerrar.setBounds(193, 277, 130, 36);
+		contentPane.add(btnCerrar);
+		
+		JButton btnRestablecer = new JButton("REESTABLECER");
+		btnRestablecer.setIcon(new ImageIcon("C:\\Users\\adnru\\OneDrive\\Escritorio\\8\u00B0\\FinalProject\\AdmnBD_ProyectoFinal_RuizVillaobosAdan\\iconos\\borrador.png"));
+		btnRestablecer.setBounds(100, 328, 156, 36);
+		contentPane.add(btnRestablecer);
+		setVisible(true);
+		
+	}
+	
+	/*
+	 * Launch the application.
+	 *
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					agregarBot frame = new agregarBot();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}*/
+
+}

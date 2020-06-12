@@ -1,0 +1,196 @@
+package vista;
+
+//import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.border.EmptyBorder;
+import javax.swing.event.AncestorEvent;
+import javax.swing.event.AncestorListener;
+import javax.swing.JTabbedPane;
+import javax.swing.JTable;
+
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
+import java.awt.SystemColor;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
+import javax.swing.JComboBox;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+
+import controlador.*;
+import modelo.*;
+
+public class principal extends JFrame {
+
+
+	MetodosMagicosP magic = new MetodosMagicosP();
+	PersonalDAO personalDAO = new PersonalDAO();
+	private JPanel contentPane;
+	agregarPersonal frame = new agregarPersonal();
+	public principal() {
+		setTitle("Proyecto Bar");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 761, 470);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		
+		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.LEFT);
+		tabbedPane.setBackground(Color.WHITE);
+		tabbedPane.setBounds(0, 0, 745, 431);
+		contentPane.add(tabbedPane);
+
+		Font f1 = new Font("Dosis", Font.BOLD, 12);
+		JPanel panelVentas = new JPanel();
+		JPanel panel_Inventario = new JPanel();
+		JPanel panelReportes = new JPanel();
+		JPanel panelGraficas = new JPanel();
+				
+		
+		//Configuracion de tabbedPane
+		//CAMBIAR DIRECTO A LA CARPETA DE ICONOS!!!!!
+		tabbedPane.addTab("", new ImageIcon(/*C:\\Users\\adnru\\OneDrive\\Escritorio\\8\u00B0\\FinalProject\\AdmnBD_ProyectoFinal_RuizVillaobosAdan\\*/"iconos\\ventas.png"), panelVentas, null);
+		panelVentas.setLayout(null);
+		
+		//Dentro de panel VENTAS
+		JLabel lblVentas_1 = new JLabel("VENTAS");
+		lblVentas_1.setForeground(SystemColor.textHighlight);
+		lblVentas_1.setFont(new Font("Lucida Console", Font.BOLD, 18));
+		lblVentas_1.setBounds(260, 11, 72, 27);
+		panelVentas.add(lblVentas_1);
+		
+		//Configuracion de tabbedPane
+		//CAMBIAR DIRECTO A LA CARPETA DE ICONOS!!!!!
+		tabbedPane.addTab("", new ImageIcon(/*C:\\Users\\adnru\\OneDrive\\Escritorio\\8\u00B0\\FinalProject\\AdmnBD_ProyectoFinal_RuizVillaobosAdan\\*/"iconos\\inventario.png"), panel_Inventario, null);
+		panel_Inventario.setLayout(null);
+		
+		JLabel lbl_Inventario = new JLabel("INVENTARIO");
+		lbl_Inventario.setBounds(262, 11, 120, 19);
+		lbl_Inventario.setForeground(SystemColor.textHighlight);
+		lbl_Inventario.setFont(new Font("Lucida Console", Font.BOLD, 18));
+		panel_Inventario.add(lbl_Inventario);
+		
+		//Configuracion de tabbedPane
+		//CAMBIAR DIRECTO A LA CARPETA DE ICONOS!!!!!
+		tabbedPane.addTab("", new ImageIcon(/*C:\\Users\\adnru\\OneDrive\\Escritorio\\8\u00B0\\FinalProject\\AdmnBD_ProyectoFinal_RuizVillaobosAdan\\*/"iconos\\repostes.png"), panelReportes, null);
+		panelReportes.setLayout(null);
+		
+		JLabel lblReportes = new JLabel("REPORTES");
+		lblReportes.setForeground(SystemColor.textHighlight);
+		lblReportes.setFont(new Font("Lucida Console", Font.BOLD, 18));
+		lblReportes.setBounds(260, 11, 102, 24);
+		panelReportes.add(lblReportes);
+		
+		
+		//Configuracion de tabbedPane
+		//CAMBIAR DIRECTO A LA CARPETA DE ICONOS!!!!!
+		tabbedPane.addTab("", new ImageIcon(/*C:\\Users\\adnru\\OneDrive\\Escritorio\\8\u00B0\\FinalProject\\AdmnBD_ProyectoFinal_RuizVillaobosAdan\\*/"iconos\\graficas.png"), panelGraficas, null);
+		panelGraficas.setLayout(null);
+		
+		JLabel lblGraficas = new JLabel("GRAFICAS");
+		lblGraficas.setBounds(260, 11, 96, 19);
+		lblGraficas.setForeground(SystemColor.textHighlight);
+		lblGraficas.setFont(new Font("Lucida Console", Font.BOLD, 18));
+		panelGraficas.add(lblGraficas);
+		
+		//DECLARAMOS LOS PANELES
+		JPanel panelPersonal = new JPanel();
+		
+		//Configuracion de tabbedPane
+		//CAMBIAR DIRECTO A LA CARPETA DE ICONOS!!!!!
+		tabbedPane.addTab("", new ImageIcon(/*C:\\Users\\adnru\\OneDrive\\Escritorio\\8\u00B0\\FinalProject\\AdmnBD_ProyectoFinal_RuizVillaobosAdan\\*/"iconos\\personal.png"), panelPersonal, null);
+		panelPersonal.setLayout(null);
+				//Dentro de panel PERSONAL
+				JLabel lblPersonal_1 = new JLabel("PERSONAL");
+				lblPersonal_1.setForeground(SystemColor.textHighlight);
+				lblPersonal_1.setFont(new Font("Lucida Console", Font.BOLD, 18));
+				lblPersonal_1.setBounds(260, 11, 102, 25);
+				panelPersonal.add(lblPersonal_1);
+				
+				JButton btnAgregarPersonal = new JButton("AGREGAR");
+				btnAgregarPersonal.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						frame.setVisible(true);
+						
+					}
+				});
+				btnAgregarPersonal.setIcon(new ImageIcon(/*C:\\Users\\adnru\\OneDrive\\Escritorio\\8\u00B0\\FinalProject\\AdmnBD_ProyectoFinal_RuizVillaobosAdan\\*/"iconos\\anadir.png"));
+				btnAgregarPersonal.setHorizontalAlignment(SwingConstants.RIGHT);
+				btnAgregarPersonal.setFont(new Font("Lucida Console", Font.PLAIN, 13));
+				btnAgregarPersonal.setBounds(12, 269, 140, 128);
+				panelPersonal.add(btnAgregarPersonal);
+				//cboPuesto.setBounds(302, 47, 149, 33);
+				//panelPersonal.add(cboPuesto);
+				
+				JButton btnBorrarPersonal = new JButton("ELIMINAR");
+				btnBorrarPersonal.setIcon(new ImageIcon(/*C:\\Users\\adnru\\OneDrive\\Escritorio\\8\u00B0\\FinalProject\\AdmnBD_ProyectoFinal_RuizVillaobosAdan\\*/"iconos\\basura.png"));
+				btnBorrarPersonal.setFont(new Font("Lucida Console", Font.PLAIN, 13));
+				btnBorrarPersonal.setBounds(323, 269, 151, 128);
+				panelPersonal.add(btnBorrarPersonal);
+				
+				JButton btnEditarPersonal = new JButton("EDITAR");
+				btnEditarPersonal.setIcon(new ImageIcon(/*C:\\Users\\adnru\\OneDrive\\Escritorio\\8\u00B0\\FinalProject\\AdmnBD_ProyectoFinal_RuizVillaobosAdan\\*/"iconos\\lapiz.png"));
+				btnEditarPersonal.setFont(new Font("Lucida Console", Font.PLAIN, 13));
+				btnEditarPersonal.setBounds(486, 269, 140, 128);
+				panelPersonal.add(btnEditarPersonal);
+				
+				JButton btnConsultasPersonal = new JButton("Consultas");
+				btnConsultasPersonal.setIcon(new ImageIcon("C:\\Users\\adnru\\OneDrive\\Escritorio\\8\u00B0\\FinalProject\\AdmnBD_ProyectoFinal_RuizVillaobosAdan\\iconos\\lupa.png"));
+				btnConsultasPersonal.setBounds(164, 268, 147, 128);
+				panelPersonal.add(btnConsultasPersonal);
+		
+		
+		
+		
+	}
+	
+	
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
+			// UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+			// UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAmdFeel");
+			// UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedLookAndFeelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		SwingUtilities.invokeLater(new Runnable() {
+			@Override
+			public void run() {
+				
+				// TODO Auto-generated method stub
+				new Login();
+			}
+		});
+	}// Metodo MAIN
+}// Clase principal
+

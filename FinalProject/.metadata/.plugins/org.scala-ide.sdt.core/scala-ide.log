@@ -1,0 +1,270 @@
+2020-06-04 00:30:31,880 ERROR [main] - System.err - [org.eclipse.pde.ui] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-06-04 00:30:32,051 ERROR [main] - System.err - [org.eclipse.jdt.launching] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-06-04 00:32:31,399 ERROR [main] - System.err - [org.eclipse.jdt.debug] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-06-04 03:26:23,567 ERROR [main] - System.err - java.lang.ClassCastException: org.eclipse.wb.core.model.association.ConstructorChildAssociation cannot be cast to org.eclipse.wb.core.model.association.InvocationChildAssociation
+2020-06-04 03:26:23,625 ERROR [main] - System.err - at org.eclipse.wb.internal.swing.model.component.AbstractPositionContainerInfo.getAssociationInvocation(AbstractPositionContainerInfo.java:89)
+2020-06-04 03:26:23,625 ERROR [main] - System.err - at org.eclipse.wb.internal.swing.model.component.AbstractPositionContainerInfo.command_MOVE(AbstractPositionContainerInfo.java:62)
+2020-06-04 03:26:23,625 ERROR [main] - System.err - at org.eclipse.wb.internal.swing.gef.policy.component.JScrollPaneLayoutEditPolicy.command_MOVE(JScrollPaneLayoutEditPolicy.java:90)
+2020-06-04 03:26:23,625 ERROR [main] - System.err - at org.eclipse.wb.internal.swing.gef.policy.component.JScrollPaneLayoutEditPolicy.command_MOVE(JScrollPaneLayoutEditPolicy.java:1)
+2020-06-04 03:26:23,625 ERROR [main] - System.err - at org.eclipse.wb.core.gef.policy.layout.position.ObjectPositionLayoutEditPolicy$3.executeEdit(ObjectPositionLayoutEditPolicy.java:73)
+2020-06-04 03:26:23,625 ERROR [main] - System.err - at org.eclipse.wb.core.gef.command.EditCommand$1.run(EditCommand.java:52)
+2020-06-04 03:26:23,625 ERROR [main] - System.err - at org.eclipse.wb.internal.core.utils.execution.ExecutionUtils.run(ExecutionUtils.java:324)
+2020-06-04 03:26:23,626 ERROR [main] - System.err - at org.eclipse.wb.core.gef.command.EditCommand.execute(EditCommand.java:50)
+2020-06-04 03:26:23,626 ERROR [main] - System.err - at org.eclipse.wb.internal.gef.core.EditDomain.executeCommand(EditDomain.java:59)
+2020-06-04 03:26:23,626 ERROR [main] - System.err - at org.eclipse.wb.gef.core.tools.Tool.executeCommand(Tool.java:209)
+2020-06-04 03:26:23,626 ERROR [main] - System.err - at org.eclipse.wb.gef.core.tools.DragEditPartTracker.handleButtonUp(DragEditPartTracker.java:74)
+2020-06-04 03:26:23,626 ERROR [main] - System.err - at org.eclipse.wb.gef.core.tools.Tool.mouseUp(Tool.java:395)
+2020-06-04 03:26:23,626 ERROR [main] - System.err - at org.eclipse.wb.gef.graphical.tools.SelectionTool.mouseUp(SelectionTool.java:250)
+2020-06-04 03:26:23,626 ERROR [main] - System.err - at org.eclipse.wb.internal.gef.core.EditDomain.mouseUp(EditDomain.java:255)
+2020-06-04 03:26:23,626 ERROR [main] - System.err - at org.eclipse.wb.internal.gef.graphical.EditEventManager.mouseUp(EditEventManager.java:149)
+2020-06-04 03:26:23,626 ERROR [main] - System.err - at sun.reflect.GeneratedMethodAccessor117.invoke(Unknown Source)
+2020-06-04 03:26:23,626 ERROR [main] - System.err - at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+2020-06-04 03:26:23,626 ERROR [main] - System.err - at java.lang.reflect.Method.invoke(Unknown Source)
+2020-06-04 03:26:23,626 ERROR [main] - System.err - at org.eclipse.wb.internal.draw2d.EventManager$8.invoke(EventManager.java:325)
+2020-06-04 03:26:23,626 ERROR [main] - System.err - at com.sun.proxy.$Proxy22.mouseUp(Unknown Source)
+2020-06-04 03:26:23,626 ERROR [main] - System.err - at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:224)
+2020-06-04 03:26:23,626 ERROR [main] - System.err - at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+2020-06-04 03:26:23,626 ERROR [main] - System.err - at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4105)
+2020-06-04 03:26:23,626 ERROR [main] - System.err - at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1037)
+2020-06-04 03:26:23,626 ERROR [main] - System.err - at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3922)
+2020-06-04 03:26:23,627 ERROR [main] - System.err - at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3524)
+2020-06-04 03:26:23,627 ERROR [main] - System.err - at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+2020-06-04 03:26:23,627 ERROR [main] - System.err - at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+2020-06-04 03:26:23,627 ERROR [main] - System.err - at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+2020-06-04 03:26:23,627 ERROR [main] - System.err - at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+2020-06-04 03:26:23,627 ERROR [main] - System.err - at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:658)
+2020-06-04 03:26:23,627 ERROR [main] - System.err - at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+2020-06-04 03:26:23,627 ERROR [main] - System.err - at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:557)
+2020-06-04 03:26:23,627 ERROR [main] - System.err - at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154)
+2020-06-04 03:26:23,627 ERROR [main] - System.err - at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+2020-06-04 03:26:23,627 ERROR [main] - System.err - at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+2020-06-04 03:26:23,627 ERROR [main] - System.err - at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+2020-06-04 03:26:23,627 ERROR [main] - System.err - at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+2020-06-04 03:26:23,627 ERROR [main] - System.err - at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+2020-06-04 03:26:23,627 ERROR [main] - System.err - at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+2020-06-04 03:26:23,627 ERROR [main] - System.err - at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2020-06-04 03:26:23,627 ERROR [main] - System.err - at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+2020-06-04 03:26:23,627 ERROR [main] - System.err - at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+2020-06-04 03:26:23,627 ERROR [main] - System.err - at java.lang.reflect.Method.invoke(Unknown Source)
+2020-06-04 03:26:23,627 ERROR [main] - System.err - at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+2020-06-04 03:26:23,627 ERROR [main] - System.err - at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+2020-06-04 03:26:23,627 ERROR [main] - System.err - at org.eclipse.equinox.launcher.Main.run(Main.java:1447)
+2020-06-05 10:46:58,980 ERROR [main] - System.err - [org.eclipse.pde.ui] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-06-05 10:46:59,140 ERROR [main] - System.err - [org.eclipse.jdt.launching] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-06-05 10:47:05,977 ERROR [main] - System.err - [org.eclipse.jdt.debug] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-06-05 11:26:17,233 ERROR [main] - System.err - [org.eclipse.pde.ui] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-06-05 11:26:17,596 ERROR [main] - System.err - [org.eclipse.jdt.launching] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-06-05 11:32:05,918 ERROR [main] - System.err - [org.eclipse.jdt.debug] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-06-05 19:41:19,397 ERROR [main] - System.err - [org.eclipse.pde.ui] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-06-05 19:41:19,533 ERROR [main] - System.err - [org.eclipse.jdt.launching] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-06-05 19:41:32,169 ERROR [main] - System.err - [org.eclipse.jdt.debug] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-06-09 14:55:05,537 ERROR [main] - System.err - [org.eclipse.pde.ui] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-06-09 14:55:05,748 ERROR [main] - System.err - [org.eclipse.jdt.launching] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-06-09 14:55:20,519 ERROR [main] - System.err - [org.eclipse.jdt.debug] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-06-09 20:49:19,786 ERROR [main] - System.err - org.eclipse.wb.internal.core.utils.exception.DesignerException: 205 (Unable to parse source.). 	private static class __Tmp {
+	}
+ line: 21 The serializable class personalABCC does not declare a static final serialVersionUID field of type long
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.wb.internal.core.utils.ast.AstParser.parseBodyDeclaration(AstParser.java:182)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.wb.internal.core.utils.ast.AstEditor.addBodyDeclaration(AstEditor.java:2581)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.wb.internal.core.utils.ast.AstEditor.addTypeDeclaration(AstEditor.java:2371)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.wb.internal.core.model.util.live.AbstractLiveManager.parse(AbstractLiveManager.java:181)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.wb.internal.swing.model.component.live.SwingLiveManager.createLiveComponent(SwingLiveManager.java:56)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.wb.internal.core.model.util.live.AbstractLiveManager.createCacheEntryEx(AbstractLiveManager.java:103)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.wb.internal.core.model.util.live.AbstractLiveManager.createCacheEntry(AbstractLiveManager.java:82)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.wb.internal.core.model.util.live.AbstractLiveManager.getCachedEntry(AbstractLiveManager.java:264)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.wb.internal.core.model.util.live.AbstractLiveManager.getCachedEntry(AbstractLiveManager.java:245)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.wb.internal.swing.model.component.live.SwingLiveManager.getImage(SwingLiveManager.java:131)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.wb.internal.swing.model.component.ComponentInfo.getLiveImage(ComponentInfo.java:259)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.wb.core.model.AbstractComponentInfo.getImage(AbstractComponentInfo.java:165)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.wb.internal.core.gef.policy.layout.absolute.AbsoluteBasedLayoutEditPolicy.showCreationFeedback(AbsoluteBasedLayoutEditPolicy.java:614)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.wb.internal.core.gef.policy.layout.absolute.AbsoluteBasedLayoutEditPolicy.showLayoutTargetFeedback(AbsoluteBasedLayoutEditPolicy.java:307)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.wb.gef.graphical.policies.LayoutEditPolicy.showTargetFeedback(LayoutEditPolicy.java:210)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.wb.gef.core.EditPart.showTargetFeedback(EditPart.java:827)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.wb.gef.core.tools.TargetingTool.showTargetFeedback(TargetingTool.java:242)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.wb.gef.core.tools.TargetingTool.handleEnteredEditPart(TargetingTool.java:99)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.wb.gef.core.tools.TargetingTool.setTargetEditPart(TargetingTool.java:76)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.wb.gef.core.tools.TargetingTool.updateTargetUnderMouse(TargetingTool.java:177)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.wb.gef.core.tools.AbstractCreationTool.handleMove(AbstractCreationTool.java:73)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.wb.gef.core.tools.Tool.mouseMove(Tool.java:426)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.wb.internal.gef.core.EditDomain.mouseMove(EditDomain.java:266)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.wb.internal.gef.graphical.EditEventManager.mouseMove(EditEventManager.java:170)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at sun.reflect.GeneratedMethodAccessor145.invoke(Unknown Source)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at java.lang.reflect.Method.invoke(Unknown Source)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.wb.internal.draw2d.EventManager$8.invoke(EventManager.java:325)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at com.sun.proxy.$Proxy22.mouseMove(Unknown Source)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:216)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4105)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1037)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3922)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3524)
+2020-06-09 20:49:19,798 ERROR [main] - System.err - at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+2020-06-09 20:49:19,799 ERROR [main] - System.err - at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+2020-06-09 20:49:19,799 ERROR [main] - System.err - at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+2020-06-09 20:49:19,799 ERROR [main] - System.err - at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+2020-06-09 20:49:19,799 ERROR [main] - System.err - at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:658)
+2020-06-09 20:49:19,799 ERROR [main] - System.err - at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+2020-06-09 20:49:19,799 ERROR [main] - System.err - at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:557)
+2020-06-09 20:49:19,799 ERROR [main] - System.err - at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154)
+2020-06-09 20:49:19,799 ERROR [main] - System.err - at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+2020-06-09 20:49:19,799 ERROR [main] - System.err - at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+2020-06-09 20:49:19,799 ERROR [main] - System.err - at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+2020-06-09 20:49:19,799 ERROR [main] - System.err - at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+2020-06-09 20:49:19,799 ERROR [main] - System.err - at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+2020-06-09 20:49:19,799 ERROR [main] - System.err - at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+2020-06-09 20:49:19,799 ERROR [main] - System.err - at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2020-06-09 20:49:19,799 ERROR [main] - System.err - at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+2020-06-09 20:49:19,799 ERROR [main] - System.err - at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+2020-06-09 20:49:19,799 ERROR [main] - System.err - at java.lang.reflect.Method.invoke(Unknown Source)
+2020-06-09 20:49:19,799 ERROR [main] - System.err - at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+2020-06-09 20:49:19,799 ERROR [main] - System.err - at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+2020-06-09 20:49:19,799 ERROR [main] - System.err - at org.eclipse.equinox.launcher.Main.run(Main.java:1447)
+2020-06-09 20:49:19,800 ERROR [main] - System.err - Caused by: org.eclipse.wb.internal.core.utils.exception.DesignerException: 205 (Unable to parse source.). package vista;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+
+import controlador.*;
+import modelo.*;
+
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+public class personalABCC extends JFrame {
+
+	JTable tableAltas;
+	private JPanel contentPane;
+	PersonalDAO personalDAO = new PersonalDAO();
+	JPanel panelTabla = new JPanel();
+	/**
+	 * Create the frame.
+	 */
+	public personalABCC() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 702, 413);
+		contentPane = new JPanel();
+		contentPane.setBackground(SystemColor.textHighlight);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		setVisible(true);
+		//personalDAO.actualizarTabla(tableAltas);
+		
+		JButton btnAgregar = new JButton("AGREGAR");
+		btnAgregar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				agregarPersonal frame = new agregarPersonal();
+				frame.setVisible(true);
+			}
+		});
+		btnAgregar.setIcon(new ImageIcon("C:\\Users\\adnru\\OneDrive\\Escritorio\\8\u00B0\\FinalProject\\AdmnBD_ProyectoFinal_RuizVillaobosAdan\\iconos\\anadir.png"));
+		btnAgregar.setBounds(530, 25, 115, 33);
+		contentPane.add(btnAgregar);
+		
+		
+		panelTabla.setBackground(SystemColor.activeCaption);
+		panelTabla.setBounds(0, 69, 686, 244);
+		contentPane.add(panelTabla);
+		panelTabla.setLayout(null);
+		
+		/*String columnas[] = { "ID Usuario", "Nombre", "Primer Ap", "Segundo Ap", "Puesto", "Entrada", "Salida", "Sueldo", "Dias Trabj." };
+		String datos[][] = { { "", "", "", "", "", "", "", "", "" },  { "", "", "", "", "", "", "", "", "" },
+		{ "", "", "", "", "", "", "", "", "" }, { "", "", "", "", "", "", "", "", "" }, { "", "", "", "", "", "", "", "", "" }, 
+		{ "", "", "", "", "", "", "", "", "" },{ "", "", "", "", "", "", "", "", "" },{ "", "", "", "", "", "", "", "", "" },
+		{ "", "", "", "", "", "", "", "", "" },{ "", "", "", "", "", "", "", "", "" },{ "", "", "", "", "", "", "", "", "" }};
+
+		tableAltas = new JTable(datos, columnas);
+		JScrollPane scroll = new JScrollPane(tableAltas);
+		scroll.setBounds(5, 9, 670, 160);
+		panelTabla.add(scroll);*/
+		
+		JButton btnCerrar = new JButton("CERRAR");
+		btnCerrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+			}
+		});
+		btnCerrar.setIcon(new ImageIcon("C:\\Users\\adnru\\OneDrive\\Escritorio\\8\u00B0\\FinalProject\\AdmnBD_ProyectoFinal_RuizVillaobosAdan\\iconos\\cruz-entrecruzada.png"));
+		btnCerrar.setBounds(495, 324, 112, 33);
+		contentPane.add(btnCerrar);
+		
+	}
+	
+	/**
+	 * Launch the application.
+	 */
+	/*public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					personalABCC frame = new personalABCC();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}*/
+	private static class __Tmp {
+	}
+}
+ line: 21 The serializable class personalABCC does not declare a static final serialVersionUID field of type long
+2020-06-09 20:49:19,800 ERROR [main] - System.err - at org.eclipse.wb.internal.core.utils.ast.AstParser.findNode(AstParser.java:773)
+2020-06-09 20:49:19,800 ERROR [main] - System.err - at org.eclipse.wb.internal.core.utils.ast.AstParser.parseBodyDeclaration(AstParser.java:179)
+2020-06-09 20:49:19,800 ERROR [main] - System.err - ... 55 more
+2020-06-09 20:49:19,800 ERROR [main] - System.err - Caused by: org.eclipse.wb.internal.core.utils.check.AssertionFailedException: assertion failed
+2020-06-09 20:49:19,800 ERROR [main] - System.err - at org.eclipse.wb.internal.core.utils.check.Assert.fail(Assert.java:225)
+2020-06-09 20:49:19,800 ERROR [main] - System.err - at org.eclipse.wb.internal.core.utils.check.Assert.isTrue(Assert.java:268)
+2020-06-09 20:49:19,800 ERROR [main] - System.err - at org.eclipse.wb.internal.core.utils.check.Assert.isTrue(Assert.java:252)
+2020-06-09 20:49:19,800 ERROR [main] - System.err - at org.eclipse.wb.internal.core.utils.ast.AstParser.findNode0(AstParser.java:823)
+2020-06-09 20:49:19,800 ERROR [main] - System.err - at org.eclipse.wb.internal.core.utils.ast.AstParser.findNode(AstParser.java:770)
+2020-06-09 20:49:19,800 ERROR [main] - System.err - ... 56 more
+2020-06-10 05:46:57,472 ERROR [main] - System.err - [org.eclipse.pde.ui] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-06-10 05:46:57,592 ERROR [main] - System.err - [org.eclipse.jdt.launching] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-06-10 05:47:07,202 ERROR [main] - System.err - [org.eclipse.jdt.debug] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-06-11 16:32:29,692 ERROR [main] - System.err - [org.eclipse.pde.ui] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-06-11 16:32:29,877 ERROR [main] - System.err - [org.eclipse.jdt.launching] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-06-11 16:32:40,046 ERROR [main] - System.err - [org.eclipse.jdt.debug] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-06-11 19:07:00,097 ERROR [main] - System.err - [org.eclipse.pde.ui] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-06-11 19:07:00,172 ERROR [main] - System.err - [org.eclipse.jdt.launching] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-06-11 19:07:09,464 ERROR [main] - System.err - [org.eclipse.jdt.debug] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-06-11 19:46:42,180 ERROR [main] - System.err - [org.eclipse.pde.ui] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-06-11 19:46:42,220 ERROR [main] - System.err - [org.eclipse.jdt.launching] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]
+2020-06-11 19:46:48,214 ERROR [main] - System.err - [org.eclipse.jdt.debug] error can't determine implemented interfaces of missing type org.eclipse.jdt.internal.core.manipulation.JavaElementLabelComposerCore
+ [Xlint:cantFindType]

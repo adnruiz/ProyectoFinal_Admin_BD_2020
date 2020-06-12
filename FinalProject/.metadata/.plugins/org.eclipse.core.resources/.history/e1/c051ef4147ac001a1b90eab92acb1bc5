@@ -1,0 +1,56 @@
+package vista;
+
+import java.io.File;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartUtilities;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.general.DefaultPieDataset;
+
+import com.mysql.cj.protocol.Resultset;
+import com.mysql.cj.xdevapi.Statement;
+
+import conexionDB.DBConnection;
+
+public class DibujarGrafica {
+
+	private static DibujarGrafica instancia;
+	public static DibujarGrafica getInstancia() {
+		if(instancia==null) {
+			instancia = new DibujarGrafica();
+		}
+		return instancia;
+	}
+	
+	private static DBConnection c = new DBConnection();
+	public Connection cn = c.getConnection();
+	
+	public String sql = "";
+	
+	public void mostrarDes(ResultSet rs) throws SQLException, IOException {
+		sql = "SELECT * FROM inventario_bar";
+		
+		Statement<?, ?> st = (Statement<?, ?>) cn.createStatement();
+		rs = ((java.sql.Statement) st).executeQuery(sql);
+		
+		DefaultPieDataset dataset = new DefaultPieDataset();
+		while(((Resultset) rs).getNextResultset() != null) {
+			dataset.setValue(rs.getString("Tipo_Destilado"), Integer.parseInt(rs.getString("Cantidad_Botellas")));
+		}
+		
+		//Dibujamos lq grafica
+		JFreeChart chart = ChartFactory.createPieChart("Grafica de Botellas", dataset, true,true, false);
+		
+		//tamaño para la imagen
+		int ancho = 560;
+		int alto = 380;
+		
+		File f = new File("GraficaBot.png");
+		ChartUtilities.saveChartAsPNG(f, chart, ancho, alto);
+	}
+	
+}
